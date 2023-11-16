@@ -37,6 +37,7 @@ language_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True,
     input_field_placeholder="Choose a language",
+    selective=True,
 )
     
 ok_markup = ReplyKeyboardMarkup(
@@ -48,6 +49,7 @@ ok_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True,
     input_field_placeholder="Click button please",
+    selective=True,
 )
 
 next_markup = ReplyKeyboardMarkup(
@@ -59,6 +61,7 @@ next_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True,
     input_field_placeholder="Click button please",
+    selective=True,
 )
 
 show_markup = ReplyKeyboardMarkup(
@@ -71,6 +74,7 @@ show_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True,
     input_field_placeholder="Click button please",
+    selective=True,
 )        
 
 feed_markup = ReplyKeyboardMarkup(
@@ -84,6 +88,7 @@ feed_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True,
     input_field_placeholder="Click one button please",
+    selective=True,
 )        
     
     

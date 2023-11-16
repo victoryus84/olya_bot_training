@@ -10,7 +10,7 @@ def language_reply():
     [builder.button(text=item) for item in LANGUAGES_ARRAY]
     builder.adjust(*[2] * 4)
 
-    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True)
+    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True, selective=True)
 
 def universities_reply():
     
@@ -24,7 +24,7 @@ def universities_reply():
     [builder.button(text=item) for item in university_names]
     # builder.button(text="Cancel")
     builder.adjust(*[4] * 4)
-    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True)
+    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True, selective=True)
 
 def courses_reply(university):
     print (university)
@@ -44,7 +44,7 @@ def courses_reply(university):
     # builder.button(text="Cancel")
     builder.adjust(*[1] * 4)
 
-    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True)
+    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True, selective=True)
 
 def bool_reply(language):
     bool_array = BOOL_DICT.get(language)
@@ -53,7 +53,7 @@ def bool_reply(language):
     # builder.button(text="Cancel")
     builder.adjust(*[2] * 4)
 
-    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True)
+    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True, selective=True)
 
 def profile(text: str | list):
     builder = ReplyKeyboardBuilder()
@@ -62,7 +62,7 @@ def profile(text: str | list):
         text = [text]
     
     [builder.button(text=txt) for txt in text]
-    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True)
+    return builder.as_markup(resize_keyboard=True, one_time_keyboard=True, selective=True)
 
 # ////////// inline kbd //////////
 def languages_inline():
