@@ -32,12 +32,13 @@ class CourseAdmin(admin.ModelAdmin):
     ordering = ['id','university']  
     
 class CoursesMsgAdmin(admin.ModelAdmin):
-    list_display = ['course', 'name', 'message','language','step']
+    list_display = ['id', 'course', 'name', 'message','language','step']
     list_display_links = ['name', 'message']
-    list_filter = ['name', 'course']
+    list_filter = ['course', 'name']
     search_fields = ['name', 'course']
     save_on_top = True  
     ordering = ['id', 'course']  
+    readonly_fields = ('id',)
         
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ['name', 'message','language','step']
