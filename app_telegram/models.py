@@ -1,6 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+languagechoices=(
+        ("en", "en"),
+        ("ro", "ro"),
+        )
+        
+        
 class TimeBasedModel(models.Model):
     class Meta:
         abstract = True
@@ -50,7 +56,7 @@ class Course(models.Model):
 class CourseMessage(models.Model):
     name = models.CharField(max_length=50)    
     message = models.TextField(max_length=5000)
-    language = models.CharField(max_length=2)
+    language = models.CharField(max_length=2, choices=languagechoices)
     step = models.IntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
@@ -59,12 +65,12 @@ class CourseMessage(models.Model):
         verbose_name_plural = 'Course messages'
 
     def __str__(self):
-        return f'{self.id}'
+        return f'{self.id, self.course, self.name, self.language, self.step}'
     
 class Feedback(models.Model):
     name = models.CharField(max_length=50)
     message = models.TextField(max_length=5000)  
-    language = models.CharField(max_length=2)
+    language = models.CharField(max_length=2, choices=languagechoices)
     step = models.IntegerField()
      
     class Meta:

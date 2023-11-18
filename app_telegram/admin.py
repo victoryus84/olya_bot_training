@@ -9,7 +9,7 @@ from app_telegram.models import (
         Feedback,
         FeedbackData,
 )
-
+    
 class TGUserAdmin(admin.ModelAdmin):
     list_display = ['tg_id', 'created']
     list_filter = ['created']
@@ -38,6 +38,7 @@ class CoursesMsgAdmin(admin.ModelAdmin):
     list_filter = ['course', 'name']
     search_fields = ['name', 'course']
     save_on_top = True  
+    save_as = True
     ordering = ['id', 'course']
     readonly_fields = ['id']
     fieldsets = [
