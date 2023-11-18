@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.postgres',
     'app_telegram.apps.AppTelegramConfig',
-    'tinymce',
 ]
 
 MIDDLEWARE = [
