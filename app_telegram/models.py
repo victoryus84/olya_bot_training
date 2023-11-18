@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.contrib import admin
+from tinymce.models import HTMLField
 
 class TimeBasedModel(models.Model):
     class Meta:
@@ -50,7 +50,8 @@ class Course(models.Model):
 
 class CourseMessage(models.Model):
     name = models.CharField(max_length=50)    
-    message = models.CharField(max_length=5000)  
+    # message = models.CharField(max_length=5000)
+    message = HTMLField(max_length=5000)  
     language = models.CharField(max_length=2)
     step = models.IntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
@@ -64,7 +65,8 @@ class CourseMessage(models.Model):
     
 class Feedback(models.Model):
     name = models.CharField(max_length=50)
-    message = models.CharField(max_length=5000)  
+    # message = models.CharField(max_length=5000)  
+    message = HTMLField(max_length=5000)  
     language = models.CharField(max_length=2)
     step = models.IntegerField()
      

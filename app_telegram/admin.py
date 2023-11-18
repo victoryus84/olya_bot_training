@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib import admin
 
 from app_telegram.models import (
@@ -30,16 +31,31 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['name', 'university']
     save_on_top = True  
     ordering = ['id','university']  
-    
+            
 class CoursesMsgAdmin(admin.ModelAdmin):
     list_display = ['id', 'course', 'name', 'message','language','step']
     list_display_links = ['name', 'message']
     list_filter = ['course', 'name']
     search_fields = ['name', 'course']
     save_on_top = True  
-    ordering = ['id', 'course']  
-    readonly_fields = ('id',)
-        
+    ordering = ['id', 'course']
+    readonly_fields = ['id']
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": ['id', 'course', 'name', 'message','language','step'],
+            },
+        ),
+        # (
+        #     "Advanced options",
+        #     {
+        #         "classes": ["collapse"],
+        #         "fields": ["registration_required", "template_name"],
+        #     },
+        # ),
+    ]
+               
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ['name', 'message','language','step']
     list_display_links = ['name', 'message']
