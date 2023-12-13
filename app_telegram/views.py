@@ -2,7 +2,6 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
 from django.contrib import messages
-from .forms import MyForm
 from .models import CourseMessage
 
 @require_POST
