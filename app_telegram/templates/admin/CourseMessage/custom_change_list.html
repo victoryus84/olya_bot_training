@@ -1,0 +1,15 @@
+# 'admin\CourseMessage\custom_change_list.html'
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+    <p>
+    Are you sure you want to execute this action on the selected items?
+    </p>  
+  <label for="course_name">Course name:</label>
+  <input type="text" id="course_field" name="course_name"><br><br>
+  <input type="submit" name="apply" value="Update status"/>
+</form>
+{% endblock %}
+

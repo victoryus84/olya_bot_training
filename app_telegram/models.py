@@ -59,14 +59,14 @@ class CourseMessage(models.Model):
     language = models.CharField(max_length=2, choices=languagechoices)
     step = models.IntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-
+    
     class Meta:
         verbose_name = 'Course message'
         verbose_name_plural = 'Course messages'
 
     def __str__(self):
         return f'{self.id, self.course, self.name, self.language, self.step}'
-    
+          
 class Feedback(models.Model):
     name = models.CharField(max_length=50)
     message = models.TextField(max_length=5000)  
